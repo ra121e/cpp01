@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.cpp                                         :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/20 22:44:22 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/21 12:36:39 by athonda          ###   ########.fr       */
+/*   Created: 2025/04/21 12:41:07 by athonda           #+#    #+#             */
+/*   Updated: 2025/04/21 12:41:26 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include <string>
 #include "Zombie.hpp"
 
-Zombie::Zombie(std::string s) :
-	name(s)
-{}
-
-Zombie::~Zombie()
+void	randamChump(std::string name)
 {
-	std::cout << "destructor called from system automatically" << std::endl;
-	std::cout << "used for termination process like this" << std::endl;
-}
-
-void	Zombie::announce(void)
-{
-	std::cout << "BraiiiiiiinnnzzzZ..." << std::endl;
+	Zombie	zombie(name);
+	zombie.announce();
 }

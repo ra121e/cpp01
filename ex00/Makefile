@@ -6,7 +6,7 @@
 #    By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/20 09:00:02 by athonda           #+#    #+#              #
-#    Updated: 2025/04/20 18:19:00 by athonda          ###   ########.fr        #
+#    Updated: 2025/04/21 12:38:02 by athonda          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ NAME = Zombie
 SRC_DIR = src
 SRC_F	=	Zombie.cpp \
 			newZombie.cpp \
-			randomChmp.cpp \
+			randomChump.cpp \
 			main.cpp
 
 SRC = $(SRC_F:%.c=%.c)

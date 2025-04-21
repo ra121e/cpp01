@@ -1,20 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   randamChump.cpp                                    :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/21 09:56:13 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/21 10:47:09 by athonda          ###   ########.fr       */
+/*   Created: 2025/04/21 12:30:56 by athonda           #+#    #+#             */
+/*   Updated: 2025/04/21 12:34:38 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <string>
 #include "Zombie.hpp"
 
-void	randamChump(std::string name)
+int	main(void)
 {
-	Zombie	zombie(name);
-
+	Zombie	stack_outer("stack_outer");
+	stack_outer.announce();
 }
