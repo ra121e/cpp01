@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 22:44:22 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/21 12:36:39 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/21 13:04:41 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,10 @@ Zombie::Zombie(std::string s) :
 
 Zombie::~Zombie()
 {
-	std::cout << "destructor called from system automatically" << std::endl;
-	std::cout << "used for termination process like this" << std::endl;
+	std::cout << this->name << " is destructed from system automatically" << std::endl;
 }
 
 void	Zombie::announce(void)
 {
-	std::cout << "BraiiiiiiinnnzzzZ..." << std::endl;
+	std::cout << this->name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

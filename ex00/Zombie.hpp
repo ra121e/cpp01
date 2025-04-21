@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/20 18:19:30 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/20 22:42:30 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/21 15:06:16 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,5 +27,7 @@ private:
 	std::string	name;
 	Zombie();
 };
+
+Zombie	*newZombie(std::string name);
 
 #endif
