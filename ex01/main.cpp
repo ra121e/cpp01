@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 15:39:39 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/22 17:22:51 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/22 17:51:53 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,12 @@ int	main(void)
 	new (tmp) Zombie("heapman");
 	Zombie	*heapman = static_cast<Zombie*>(tmp);
 	heapman->announce();
+	operator delete(heapman);
 
 	Zombie	*ptr = static_cast<Zombie*>(operator new(sizeof(Zombie)));
 	new (ptr) Zombie("castman");
 	ptr->announce();
+	operator delete(ptr);
 
 	int	numberZombie = 5;
 	std::cout << "create zombies " << numberZombie << std::endl;
@@ -39,5 +41,11 @@ int	main(void)
 		std::cout << "number " << i + 1 << ":";
 		horde[i].announce();
 	}
+
+	for (int i = 0; i < numberZombie; ++i)
+	{
+		horde[i].~Zombie();
+	}
+	operator delete[](horde);
 	return (0);
 }
