@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/21 17:16:15 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/22 15:52:23 by athonda          ###   ########.fr       */
+/*   Created: 2025/04/22 15:39:39 by athonda           #+#    #+#             */
+/*   Updated: 2025/04/22 15:53:03 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include <new>
+#include <string>
+#include <iostream>
+#include "Zombie.hpp"
 
-# include <string>
-
-class Zombie
+int	main(void)
 {
-public:
-	Zombie(std::string name);
-	~Zombie();
+	Zombie	zombie("stackman");
+	zombie.announce();
 
-	void	announce(void);
-
-private:
-	std::string	name;
-	Zombie();
-};
-
-#endif
+	void	*tmp = operator new(sizeof(Zombie));
+	new (tmp) Zombie("heapman");
+	Zombie	*heapman = static_cast<Zombie*>(tmp);
+	heapman->announce();
+	return (0);
+}
