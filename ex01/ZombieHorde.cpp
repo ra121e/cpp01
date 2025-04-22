@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Zombie.hpp                                         :+:      :+:    :+:   */
+/*   ZombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/21 17:16:15 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/22 17:24:17 by athonda          ###   ########.fr       */
+/*   Created: 2025/04/22 17:01:15 by athonda           #+#    #+#             */
+/*   Updated: 2025/04/22 17:28:26 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#include <string>
+#include "Zombie.hpp"
 
-# include <string>
-
-class Zombie
+Zombie* zombieHorde(int N, std::string name)
 {
-public:
-	Zombie();
-	Zombie(std::string name);
-	~Zombie();
+	if (N <= 0)
+		return NULL;
 
-	void	announce(void);
-	void	setName(std::string name);
+	Zombie* zombies = static_cast<Zombie*>(operator new[](sizeof(Zombie)*N));
+	for (int i = 0; i < N; ++i)
+	{
+		new (&zombies[i]) Zombie;
+		zombies[i].setName(name);
+	}
 
-private:
-	std::string	name;
-};
-
-Zombie* zombieHorde(int N, std::string name);
-
-#endif
+	return (zombies);
+}

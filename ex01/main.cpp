@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 15:39:39 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/22 16:33:56 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/22 17:22:51 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,15 @@ int	main(void)
 	new (ptr) Zombie("castman");
 	ptr->announce();
 
+	int	numberZombie = 5;
+	std::cout << "create zombies " << numberZombie << std::endl;
+
+	Zombie* horde = zombieHorde(numberZombie, "team ZOMBIE");
+	std::cout << "here are the team ZOMBIE!!" << std::endl;
+	for (int i = 0; i < numberZombie; ++i)
+	{
+		std::cout << "number " << i + 1 << ":";
+		horde[i].announce();
+	}
 	return (0);
 }

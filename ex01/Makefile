@@ -6,7 +6,7 @@
 #    By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/21 17:04:06 by athonda           #+#    #+#              #
-#    Updated: 2025/04/22 15:51:53 by athonda          ###   ########.fr        #
+#    Updated: 2025/04/22 17:23:24 by athonda          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME = Zombies
 
 SRC_DIR = src
 SRC_F	=	Zombie.cpp \
+			ZombieHorde.cpp \
 			main.cpp
 
 SRC = $(SRC_F:%.c=%.c)
