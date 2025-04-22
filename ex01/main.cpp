@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 15:39:39 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/22 15:53:03 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/22 16:33:56 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,10 @@ int	main(void)
 	new (tmp) Zombie("heapman");
 	Zombie	*heapman = static_cast<Zombie*>(tmp);
 	heapman->announce();
+
+	Zombie	*ptr = static_cast<Zombie*>(operator new(sizeof(Zombie)));
+	new (ptr) Zombie("castman");
+	ptr->announce();
+
 	return (0);
 }
