@@ -1,0 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/23 08:29:47 by athonda           #+#    #+#             */
+/*   Updated: 2025/04/23 08:34:23 by athonda          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef HARL_HPP
+# define HARL_HPP
+
+# include <iostream>
+# include <string>
+
+class Harl
+{
+public:
+	Harl();
+	~Harl();
+	void	complain(std::string level);
+
+private:
+	void	debug(void);
+	void	info(void);
+	void	warning(void);
+	void	error(void);
+
+};
+
+#endif
