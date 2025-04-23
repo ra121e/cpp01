@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 23:42:07 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/23 00:23:50 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/23 14:47:33 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include <iostream>
 #include "Weapon.hpp"
 #include "HumanA.hpp"
+#include "HumanB.hpp"
 
 int	main()
 {
