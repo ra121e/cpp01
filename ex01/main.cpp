@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 15:39:39 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/22 17:51:53 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/23 21:42:49 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,35 +17,40 @@
 
 int	main(void)
 {
+	std::cout << "Case0: stack zombie" << std::endl;
 	Zombie	zombie("stackman");
 	zombie.announce();
 
+	std::cout << "Case1: three steps for new: operator new, placement new, static_cast" << std::endl;
 	void	*tmp = operator new(sizeof(Zombie));
 	new (tmp) Zombie("heapman");
 	Zombie	*heapman = static_cast<Zombie*>(tmp);
 	heapman->announce();
+	heapman->~Zombie();
 	operator delete(heapman);
 
+	std::cout << "Case2: malloc like steps for new: operator new with static_cast, placement new" << std::endl;
 	Zombie	*ptr = static_cast<Zombie*>(operator new(sizeof(Zombie)));
 	new (ptr) Zombie("castman");
 	ptr->announce();
+	ptr->~Zombie();
 	operator delete(ptr);
 
 	int	numberZombie = 5;
-	std::cout << "create zombies " << numberZombie << std::endl;
-
-	Zombie* horde = zombieHorde(numberZombie, "team ZOMBIE");
-	std::cout << "here are the team ZOMBIE!!" << std::endl;
+	std::cout << "Now, we will create zombies " << numberZombie << std::endl;
+	Zombie* team = zombieHorde(numberZombie, "team ZOMBIE");
+	std::cout << "Then, the zombies have been created!!" << numberZombie << std::endl;
+	std::cout << "Here is the Team ZOMBIE!!" << std::endl;
 	for (int i = 0; i < numberZombie; ++i)
 	{
 		std::cout << "number " << i + 1 << ":";
-		horde[i].announce();
+		team[i].announce();
 	}
 
 	for (int i = 0; i < numberZombie; ++i)
 	{
-		horde[i].~Zombie();
+		team[i].~Zombie();
 	}
-	operator delete[](horde);
+	operator delete[](team);
 	return (0);
 }

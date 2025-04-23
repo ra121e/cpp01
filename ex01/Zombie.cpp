@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 17:21:51 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/22 17:31:00 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/23 21:35:37 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,10 @@ Zombie::Zombie(std::string s) :
 {}
 
 Zombie::~Zombie()
-{}
+{
+	std::cout << this->name << " is destructed from system automatically" << std::endl;
+}
+
 
 void	Zombie::announce(void)
 {
