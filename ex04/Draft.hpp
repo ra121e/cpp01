@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Replace.hpp                                        :+:      :+:    :+:   */
+/*   Draft.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 17:36:12 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/23 17:54:38 by athonda          ###   ########.fr       */
+/*   Created: 2025/04/24 17:46:20 by athonda           #+#    #+#             */
+/*   Updated: 2025/04/24 18:19:52 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef REPLACE_HPP
-# define REPLACE_HPP
+#ifndef DRAFT_HPP
+# define DRAFT_HPP
 
 # include <string>
 
-class Replace
+class Draft
 {
 public:
-	Replace(const std::string &filename);
-	~Replace();
+	Draft(const std::string &filename);
+	~Draft();
 	bool	display();
 
 private:
 	std::string _filename;
 };
-
 
 #endif

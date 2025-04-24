@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Replace.cpp                                        :+:      :+:    :+:   */
+/*   Draft.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/23 17:54:58 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/23 18:01:02 by athonda          ###   ########.fr       */
+/*   Created: 2025/04/24 18:02:49 by athonda           #+#    #+#             */
+/*   Updated: 2025/04/24 18:22:59 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <fstream>
-#include "Replace.hpp"
+#include "Draft.hpp"
 
-Replace::Replace(const std::string &filename) :
+Draft::Draft(const std::string &filename) :
 	_filename(filename)
 {}
 
-Replace::~Replace()
+Draft::~Draft()
 {}
 
-bool	Replace::display()
+bool	Draft::display()
 {
-	std::ifstream infile(_filename.c_str());
+	std::ifstream infile(this->_filename.c_str());
 	if (!infile.is_open())
 		return (false);
 

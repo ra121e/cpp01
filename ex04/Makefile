@@ -6,15 +6,15 @@
 #    By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/23 17:12:53 by athonda           #+#    #+#              #
-#    Updated: 2025/04/23 18:07:56 by athonda          ###   ########.fr        #
+#    Updated: 2025/04/24 18:16:34 by athonda          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Replace
+NAME = Draft
 
 SRC_DIR = src
 SRC_F	=	main.cpp \
-			Replace.cpp
+			Draft.cpp
 
 SRC = $(SRC_F:%.c=%.c)
 

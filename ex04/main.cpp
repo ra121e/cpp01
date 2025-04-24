@@ -6,12 +6,12 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 18:01:41 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/23 18:07:43 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/24 18:17:11 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Replace.hpp"
+#include "Draft.hpp"
 
 int	main(int ac, char *av[])
 {
@@ -22,8 +22,8 @@ int	main(int ac, char *av[])
 	}
 
 	std::string	filename = av[1];
-	Replace replace(filename);
-	if (!replace.display())
+	Draft draft(filename);
+	if (!draft.display())
 	{
 		std::cerr << "Error: not open file." << std::endl;
 		return (1);
