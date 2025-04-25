@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 18:02:49 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/25 17:45:14 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/25 18:11:12 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ Draft::~Draft()
 
 bool	Draft::readFile()
 {
-	std::ifstream infile(this->_filename.c_str());
+	std::ifstream infile(_filename.c_str());
 	if (!infile.is_open())
 		return (false);
 
 	std::string	line;
 	while (std::getline(infile, line))
 	{
-		this->_content += line + "\n";
+		_content += line + "\n";
 	}
 
 	infile.close();
@@ -52,9 +52,15 @@ void	Draft::replaceWord()
 	}
 }
 
-void	writeFile()
+bool	Draft::writeFile()
 {
-
+	std::string	outfilename = _filename + ".replace";
+	std::ofstream outfile(outfilename.c_str());
+	if (!outfile.is_open())
+		return (false);
+	outfile << _content;
+	outfile.close();
+	return (true);
 }
 
 
@@ -63,8 +69,9 @@ bool	Draft::replace()
 	if (!readFile())
 		return (false);
 	replaceWord();
-	display();
-//	writeFile();
+//	display();
+	if (!writeFile())
+		return (false);
 	return (true);
 }
 

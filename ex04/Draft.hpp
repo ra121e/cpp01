@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 17:46:20 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/25 17:34:13 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/25 18:09:36 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ private:
 
 	bool	readFile();
 	void	replaceWord();
-	void	writeFile();
+	bool	writeFile();
 	void	display();
 };
 
