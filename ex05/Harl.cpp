@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 08:34:33 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/23 08:40:03 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/25 22:15:46 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,25 @@ Harl::~Harl()
 
 void	Harl::complain(std::string level)
 {
-	if (level == "DEBUG") {
-		debug();
-	} else if (level == "INFO") {
-		info();
-	} else if (level == "WARNING") {
-		warning();
-	} else if (level == "ERROR") {
-		error();
-	} else {
-		std::cout << "Invalid level: " << level << std::endl;
+	std::string	key[4];
+	key[0] = "DEBUG";
+	key[1] = "INFO";
+	key[2] = "WARNING";
+	key[3] = "ERROR";
+
+	void (Harl::*functionPointer[4])(void);
+	functionPointer[0] = &Harl::debug;
+	functionPointer[1] = &Harl::info;
+	functionPointer[2] = &Harl::warning;
+	functionPointer[3] = &Harl::error;
+
+	for (int i = 0; i < 4; ++i)
+	{
+		if (key[i] == level)
+		{
+			(this->*functionPointer[i])();
+			return ;
+		}
 	}
 }
 
