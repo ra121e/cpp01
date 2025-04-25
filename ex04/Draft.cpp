@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/24 18:02:49 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/25 13:14:12 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/25 14:39:16 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,27 +17,51 @@
 Draft::Draft(const std::string &filename, std::string &s1, std::string &s2) :
 	_filename(filename),
 	_si(s1),
-	_s2(s2)
+	_s2(s2),
+	_content("")
 {}
 
 Draft::~Draft()
 {}
 
-bool	Draft::replace()
+bool	Draft::readFile()
 {
-	return (true);
-}
-
-bool	Draft::display()
-{
-	std::ifstream infile(_filename.c_str());
+	std::ifstream infile(this->_filename.c_str());
 	if (!infile.is_open())
 		return (false);
 
 	std::string	line;
 	while (std::getline(infile, line))
-		std::cout << line << std::endl;
+	{
+		this->_content += line + "\n";
+	}
 
 	infile.close();
 	return (true);
+}
+
+void	replaceWord()
+{
+
+}
+
+void	writeFile()
+{
+
+}
+
+
+bool	Draft::replace()
+{
+	if (!readFile())
+		return (false);
+	display();
+//	replaceWord();
+//	writeFile();
+	return (true);
+}
+
+void	Draft::display()
+{
+	std::cout << _content;
 }
