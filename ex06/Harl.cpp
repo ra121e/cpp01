@@ -6,13 +6,13 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 08:28:41 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/26 11:17:55 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/26 11:29:08 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-Harl::s_table	Harl::table[4] =
+struct Harl::s_table	Harl::table[4] =
 {
 	{"DEBUG", &Harl::debug},
 	{"INFO", &Harl::info},
