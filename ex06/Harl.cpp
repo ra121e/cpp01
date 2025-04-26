@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 08:28:41 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/26 11:49:28 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/26 17:41:51 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Harl::~Harl()
 
 void	Harl::complain(std::string level)
 {
-	int	index;
+	int	index = 4;
 	for (int i = 0; i < 4; ++i)
 	{
 		if (this->table[i].key == level)
