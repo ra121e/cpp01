@@ -1,41 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/26 00:46:06 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/26 11:14:16 by athonda          ###   ########.fr       */
+/*   Created: 2025/04/26 10:45:18 by athonda           #+#    #+#             */
+/*   Updated: 2025/04/26 10:45:38 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-# define HARL_HPP
+#include "Harl.hpp"
 
-# include <string>
-# include <iostream>
-
-
-class Harl
+int	main(void)
 {
-public:
-	Harl();
-	~Harl();
-	void	complain(std::string level);
+	Harl harl;
 
-private:
-	struct s_table
-	{
-		std::string	key;
-		void (Harl::*func)(void);
-	};
-	static s_table	table[4];
+	harl.complain("DEBUG");
+	harl.complain("INFO");
+	harl.complain("WARNING");
+	harl.complain("ERROR");
+	harl.complain("INVALID");
 
-	void	debug(void);
-	void	info(void);
-	void	warning(void);
-	void	error(void);
-};
-
-#endif
+return (0);
+}
