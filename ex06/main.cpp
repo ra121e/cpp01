@@ -6,21 +6,23 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 10:45:18 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/26 10:45:38 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/26 12:21:16 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Harl.hpp"
 
-int	main(void)
+int	main(int ac, char **av)
 {
+	if (ac != 2)
+	{
+		std::cout << "invalid input" << std::endl;
+		return (1);
+	}
+
+	std::string level = av[1];
 	Harl harl;
 
-	harl.complain("DEBUG");
-	harl.complain("INFO");
-	harl.complain("WARNING");
-	harl.complain("ERROR");
-	harl.complain("INVALID");
-
-return (0);
+	harl.complain(level);
+	return (0);
 }
