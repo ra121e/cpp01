@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 08:28:41 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/26 17:41:51 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/26 19:23:14 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	Harl::complain(std::string level)
 			(this->*(table[3].func))();
 			break ;
 		default:
-			std::cout << "out of range" << std::endl;
+			std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 	}
 }
 
