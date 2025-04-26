@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/26 08:28:41 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/26 11:29:08 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/26 11:49:28 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,31 @@ Harl::~Harl()
 
 void	Harl::complain(std::string level)
 {
+	int	index;
 	for (int i = 0; i < 4; ++i)
 	{
 		if (this->table[i].key == level)
 		{
-			(this->*(table[i].func))();
-			return ;
+			index = i;
+			break ;
 		}
+	}
+	switch (index)
+	{
+		case 0:
+			(this->*(table[0].func))();
+			// fall through
+		case 1:
+			(this->*(table[1].func))();
+			// fall through
+		case 2:
+			(this->*(table[2].func))();
+			// fall through
+		case 3:
+			(this->*(table[3].func))();
+			break ;
+		default:
+			std::cout << "out of range" << std::endl;
 	}
 }
 
