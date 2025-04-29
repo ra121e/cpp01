@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 12:30:56 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/23 21:25:00 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/29 18:18:06 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,11 @@ int	main(void)
 	Zombie	*zombie;
 	zombie = newZombie("heapZombie");
 	zombie->announce();
+	std::cout << "will call delete to delete heapZombie" << std::endl;
 	delete zombie;
+
+	std::cout << "test5: randomChump function start" << std::endl;
+	randomChump("random");
+
 	std::cout << "Finally, we will get out from main(). Bye" << std::endl;
 }
