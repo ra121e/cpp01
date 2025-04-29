@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/23 14:37:40 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/23 15:50:48 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/29 18:50:04 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,10 @@ void	HumanB::setWeapon(Weapon &weapon)
 
 void	HumanB::attack(void)
 {
+	if (!this->weapon)
+	{
+		std::cout << this->name << " Farewell to Weapons" << std::endl;
+		return ;
+	}
 	std::cout << this->name << " attacks with their " << this->weapon->getType() << std::endl;
 }
