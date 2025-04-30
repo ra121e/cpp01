@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/22 15:39:39 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/23 21:49:20 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/30 23:02:55 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,5 +64,24 @@ int	main(void)
 	}
 	std::cout << std::endl;
 	operator delete[](team);
+
+	numberZombie = 5;
+	std::cout << "[after Eval]we will create zombies by new" << numberZombie << std::endl;
+	Zombie* teamnew = zombieHordeNew(numberZombie, "team NEWZOMBIE");
+	std::cout << "Then, the zombies have been created!!" << numberZombie << std::endl;
+	std::cout << std::endl;
+	std::cout << "Here is the Team NEWZOMBIE!!" << std::endl;
+	for (int i = 0; i < numberZombie; ++i)
+	{
+		std::cout << "number " << i + 1 << ":";
+		teamnew[i].announce();
+	}
+	std::cout << std::endl;
+//	for (int i = 0; i < numberZombie; ++i)
+//	{
+//		team[i].~Zombie();
+//	}
+//	std::cout << std::endl;
+	delete[](teamnew);
 	return (0);
 }

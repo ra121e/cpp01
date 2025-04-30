@@ -6,7 +6,7 @@
 /*   By: athonda <athonda@student.42singapore.sg    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 17:16:15 by athonda           #+#    #+#             */
-/*   Updated: 2025/04/22 17:24:17 by athonda          ###   ########.fr       */
+/*   Updated: 2025/04/30 22:51:37 by athonda          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,6 @@ private:
 };
 
 Zombie* zombieHorde(int N, std::string name);
+Zombie* zombieHordeNew(int N, std::string name);
 
 #endif
